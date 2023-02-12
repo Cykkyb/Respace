@@ -1,0 +1,44 @@
+.tile-catalog {
+    margin-bottom: 135px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 85px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top {
+        margin-bottom: 70px;
+    }
+
+    &__image {
+
+    }
+
+    &__main {
+
+    }
+    &__gallery{
+        margin: 0;
+    }
+
+
+}
+
+.tile-catalog-banner {
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        span {
+            margin-bottom: 20px;
+        }
+
+    }
+
+}

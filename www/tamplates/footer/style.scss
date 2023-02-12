@@ -1,0 +1,169 @@
+.footer {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr;
+        gap: 25px;
+        margin: 85px 0;
+
+        @include breakpoint(lg) {
+            margin: 85px 0 35px 0;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .footer-menu {
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+
+        @include breakpoint(lg) {
+            border-bottom: 1px solid $main-color;
+            border-top: 1px solid $main-color;
+            padding-top: 25px;
+        }
+        @include breakpoint(md) {
+            grid-template-columns:repeat(2, 1fr);
+        }
+        @include breakpoint(sm) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__column {
+
+        }
+
+        &__item {
+
+            @include breakpoint(md) {
+                padding: 9px 0;
+            }
+
+        }
+
+        &__label {
+            font-size: 24px;
+            color: $main-color;
+            display: flex;
+            cursor: pointer;
+
+            &:hover {
+                color: #F880B9;
+            }
+
+            @include breakpoint(sm) {
+            }
+        }
+
+
+        &__sublist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0 30px 0;
+
+            @include breakpoint(sm) {
+                display: none;
+            }
+        }
+
+        &__sublist-link {
+
+            &:hover {
+                color: #F880B9;
+            }
+        }
+
+    }
+
+    .footer-info {
+
+        &__item {
+        }
+
+        &__label {
+            font-size: 24px;
+            color: $main-color;
+            cursor: pointer;
+
+            &:hover {
+                color: #F880B9;
+            }
+
+            @include breakpoint(lg) {
+                display: none;
+            }
+        }
+
+        &__sublist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 30px 0;
+
+
+        }
+
+        &__sublist-link {
+
+            &:hover {
+                color: #F880B9;
+            }
+        }
+
+    }
+
+    .footer-contacts {
+        color: $main-color;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+
+        @include breakpoint(lg) {
+            padding: 35px 0 0 0;
+            gap: 0;
+            border-top: 1px solid $main-color;
+        }
+
+        &__label {
+            font-size: 24px;
+            color: inherit;
+            cursor: pointer;
+
+            &:hover {
+                color: #F880B9;
+            }
+
+            @include breakpoint(lg) {
+                display: none;
+            }
+        }
+
+        &__main {
+            padding: 0 0 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            @include breakpoint-revert(lg) {
+                border-bottom: 1px solid $main-color;
+            }
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            a {
+                color: $main-color;
+
+                &:hover {
+                    color: #F880B9;
+                }
+            }
+        }
+
+    }
+}

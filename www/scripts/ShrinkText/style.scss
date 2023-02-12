@@ -1,0 +1,38 @@
+._shrink{
+    transition: height, max-height 0.3s linear;
+    overflow: hidden;
+}
+
+.expand {
+    padding: 10px 0 0 0;
+    width: fit-content;
+    font-size: 12px;
+    cursor: pointer;
+    color: $main-color;
+
+    &:hover {
+        color: $violet;
+    }
+
+    span {
+        color: inherit;
+    }
+
+    span:first-child {
+        display: inline-block;
+    }
+    span:last-child{
+        display: none;
+    }
+    &_active {
+
+        span:first-child {
+            display: none;
+        }
+
+        span:last-child {
+            display: inline-block;
+        }
+    }
+
+}

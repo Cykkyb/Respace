@@ -1,0 +1,62 @@
+.special-card {
+    background: #F6F6F6;
+    backdrop-filter: blur(4px);
+    border-radius: 20px 0 20px 0;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include breakpoint-revert(sm) {
+        &_mobile {
+            display: none;
+        }
+    }
+
+    &__label {
+        font-size: 22px;
+        margin-top: 35px;
+        padding: 0 25px 0 25px;
+    }
+
+    &__content {
+        margin: 25px 0;
+        padding: 0 25px 0 25px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        padding-right: 25px;
+    }
+
+    &__address {
+        flex-grow: 1;
+        padding: 0 25px 0 25px;
+        line-height: 24px;
+    }
+
+    &__address-label {
+        color: $main-color;
+    }
+
+    &__prise {
+        color: white;
+        padding-left: 25px;
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 20px 0;
+        height: 75px;
+        background: linear-gradient(90deg, #CA3192 0.29%, #FF98A6 100%);;
+
+        span {
+            font-size: 32px;
+            color: inherit;
+            padding: 0 5px 0 25px;
+        }
+    }
+
+}

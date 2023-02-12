@@ -1,0 +1,104 @@
+.advantages {
+    padding: 40px 0 70px 0;
+
+    @include breakpoint(md) {
+        background-color: #F6F6F6;
+    }
+
+    &__container {
+
+        @include breakpoint(sm) {
+            padding: 0;
+        }
+    }
+
+    &__label {
+        margin-bottom: 70px;
+        max-width: 810px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 50px;
+        }
+        @include breakpoint(sm) {
+            margin: 0 0 30px 25px;
+        }
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 45px 55px;
+
+        @include breakpoint(xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint(lg) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        @include breakpoint(sm) {
+            gap: 0;
+            border-top: 1px solid $main-color;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transition: max-height 0.5s ease;
+
+        @include breakpoint(sm) {
+            max-height: 51px;
+            border-bottom: 1px solid $main-color;
+            padding: 10px 25px;
+            overflow-y: hidden;
+
+        }
+    }
+
+    &__labels {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        height: 100%;
+    }
+
+    &__icon {
+
+        @include breakpoint(sm) {
+            height: 30px;
+        }
+    }
+
+    &__item-label {
+        font-weight: 500;
+        font-size: 24px;
+        flex-grow: 1;
+
+        @include breakpoint(sm) {
+            font-size: 12px;
+        }
+    }
+
+    &__arrow {
+        height: fit-content;
+        display: none;
+        padding: 12px 0 12px 20px;
+
+        @include breakpoint(sm) {
+            display: block;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 27px;
+
+        @include breakpoint(lg) {
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+
+}

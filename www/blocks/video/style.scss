@@ -1,0 +1,14 @@
+.video {
+    background-color: #F6F6F6;
+    padding: 117px 0 85px 0;
+    margin-bottom: 165px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 85px;
+    }
+
+    @include breakpoint(md) {
+        padding: 35px 0 50px 0;
+    }
+
+}

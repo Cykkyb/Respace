@@ -1,0 +1,28 @@
+.presentation {
+    margin-bottom: 120px;
+
+    @include breakpoint(lg) {
+        background-color: #F6F6F6;
+        padding: 45px 0;
+        margin-bottom: 85px;
+    }
+
+    &__text {
+        font-size: 18px;
+
+        @include breakpoint(md) {
+            font-size: 16px;
+        }
+    }
+
+    &__image {
+
+        img {
+            position: static;
+            width: 100%;
+            margin: 0;
+        }
+
+    }
+
+}

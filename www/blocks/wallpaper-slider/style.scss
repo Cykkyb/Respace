@@ -1,0 +1,99 @@
+.wallpaper-slider {
+    margin-bottom: 160px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 85px;
+    }
+
+    &__container {
+
+        @include breakpoint(md) {
+            padding: 0;
+        }
+    }
+
+    &__label {
+        margin-bottom: 70px;
+
+        @include breakpoint(md) {
+            margin: 0 0 50px 20px;
+        }
+        @include breakpoint(sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__main {
+        position: relative;
+    }
+
+    &__slider {
+
+    }
+
+    &__wrapper {
+
+    }
+
+    &__slide {
+
+    }
+
+    &__image {
+        height: 480px;
+        margin-bottom: 10px;
+
+        @include breakpoint(md) {
+            height: 360px;
+        }
+        @include breakpoint(sm) {
+            height: 240px;
+        }
+
+        img {
+            border-radius: 20px 0 20px 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include breakpoint(md) {
+                border-radius: 0
+            }
+        }
+    }
+
+    &__button {
+        color: $pink;
+
+        &:hover {
+            color: $violet;
+        }
+
+        &:after {
+            font-size: 40px;
+        }
+
+        @include breakpoint(md) {
+            display: none;
+        }
+
+    }
+
+    &__button-prev {
+        left: -35px;
+
+        @include breakpoint(xxl) {
+            left: 10px;
+        }
+    }
+
+    &__button-next {
+        right: -35px;
+
+        @include breakpoint(xxl) {
+            right: 10px;
+        }
+
+    }
+
+}

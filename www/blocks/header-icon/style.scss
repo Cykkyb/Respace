@@ -1,0 +1,36 @@
+.header-icon {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include breakpoint(sm) {
+        gap: 20px;
+    }
+
+    &__item {
+        cursor: pointer;
+    }
+
+    &__icon {
+
+    }
+}
+
+.basket {
+    position: relative;
+
+    &__count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 9px;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: $main-color;
+        top: -8px;
+        right: -8px;
+        position: absolute;
+    }
+}

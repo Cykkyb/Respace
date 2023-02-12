@@ -1,0 +1,16 @@
+.logo {
+    height: 44px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        flex-grow: 1;
+    }
+    @include breakpoint(md) {
+        height: 26px;
+    }
+
+    &__image {
+        height: 100%;
+    }
+}

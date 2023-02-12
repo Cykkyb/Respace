@@ -1,0 +1,28 @@
+$breakPoints: (
+		"sm": 576px,
+		"md": 768px,
+		"lg": 992px,
+		"xl": 1200px,
+		"xxl": 1400px,
+);
+$breakPointsRevert: (
+		"sm": 577px,
+		"md": 769px,
+		"lg": 993px,
+		"xl": 1201px,
+		"xxl": 1401px,
+);
+
+@mixin breakpoint($size) {
+	@media screen and (max-width: map-get($breakPoints, "#{$size}")) {
+		@content;
+	}
+}
+
+@mixin breakpoint-revert($size) {
+	@media screen and (min-width: #{ map-get($breakPointsRevert, "#{$size}") }) {
+		@content;
+	}
+}
+
+

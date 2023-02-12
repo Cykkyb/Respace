@@ -1,0 +1,17 @@
+.search-icon {
+    padding: 8px 18px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &_header {
+        border-left: 1px solid $main-color;
+        margin-right: 80px;
+        @include breakpoint(sm) {
+            display: none;
+        }
+    }
+
+}

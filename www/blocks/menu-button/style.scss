@@ -1,0 +1,55 @@
+.menu-button {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    gap: 15px;
+    cursor: pointer;
+
+    &:hover div {
+        color: #F880B9;
+    }
+
+    &__label {
+        color: $main-color;
+
+        @include breakpoint(sm) {
+            display: none;
+        }
+    }
+}
+
+
+.icon-menu {
+    width: 24px;
+    display: block;
+
+    &_active {
+        span {
+            transform: scale(0);
+        }
+
+        &:before {
+            transform: translateY(12px) rotate(135deg);
+        }
+
+        &:after {
+            transform: translateY(-12px) rotate(-135deg);
+        }
+    }
+}
+
+.icon-menu span {
+    margin: 7px 0;
+
+}
+
+.icon-menu:before,
+.icon-menu:after,
+.icon-menu span {
+    background: $main-color;
+    content: "";
+    display: block;
+    height: 1px;
+    border-radius: 3px;
+    transition: 0.5s;
+}

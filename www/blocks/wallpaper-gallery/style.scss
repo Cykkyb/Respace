@@ -1,0 +1,88 @@
+.wallpaper-gallery {
+    margin-bottom: 160px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 85px;
+    }
+    @include breakpoint-revert(md) {
+        background-color: #F6F6F6;
+    }
+
+    &__item {
+        gap: 0;
+        grid-template-columns: 1fr 700px 700px 1fr;
+
+        @include breakpoint(xxl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint(md) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__image {
+
+        @include breakpoint-revert(xxl) {
+            grid-column-start: span 2;
+            max-height: 900px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__main {
+        padding: 60px 5px 60px 60px;
+
+        @include breakpoint(xxl) {
+            padding: 60px 5px 60px 25px;
+        }
+        @include breakpoint(md) {
+            padding: 30px 5px 60px 25px;
+        }
+    }
+
+    &__main._even {
+
+        @include breakpoint-revert(xxl) {
+            grid-column-start: 2;
+        }
+        @include breakpoint-revert(md) {
+            order: -1;
+        }
+    }
+
+    &__label {
+        margin-bottom: 32px;
+
+        @include breakpoint(md) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 300;
+
+        @include breakpoint(md) {
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+
+    &__category {
+        font-weight: 300;
+        margin: 15px 0;
+    }
+
+    &__link {
+        color: $main-color;
+        text-decoration: underline $main-color;
+    }
+
+
+}

@@ -1,0 +1,194 @@
+.menu {
+    background-color: white;
+    width: 100%;
+    top: -100vh;
+    transition: top 0.5s ease;
+    position: absolute;
+    z-index: 2;
+
+
+    &_active {
+        top: 100%;
+    }
+
+    @include breakpoint(lg) {
+        overflow: auto;
+        height: calc(100vh - 88px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__container {
+        max-width: 1440px;
+        padding: 0 60px;
+    }
+
+    &__main {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 20px 0;
+        @include breakpoint(lg) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        @include breakpoint(lg) {
+            border-bottom: 1px solid grey;
+        }
+    }
+
+    &__item {
+        padding: 0 40px;
+        margin: 15px 0;
+        transition: height 0.5s ease;
+        @include breakpoint(lg) {
+            height: 30px;
+            overflow: hidden;
+        }
+
+    }
+
+    &__label {
+        font-size: 24px;
+        color: $main-color;
+        display: flex;
+        cursor: pointer;
+        line-height: 30px;
+
+        &:hover {
+            color: #F880B9;
+        }
+
+        @include breakpoint(md) {
+            font-size: 20px;
+        }
+    }
+
+    &__arrow {
+        width: 25px;
+        height: 25px;
+        margin-left: auto;
+        color: $main-color;
+        display: none;
+        transition: transform 0.3s ease;
+        @include breakpoint(lg) {
+            display: block;
+
+            &_active {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__sublist {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 30px 0;
+    }
+
+    &__sublist-link {
+
+        &:hover {
+            color: #F880B9;
+        }
+    }
+
+    &__all {
+        cursor: pointer;
+        display: block;
+        font-size: 18px;
+        margin-top: 15px;
+        color: $main-color;
+
+        &:hover {
+            color: #F880B9;
+        }
+
+    }
+
+}
+
+.menu-footer {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-revert(lg) {
+        padding: 0 20px;
+        height: 55px;
+        border-top: 2px solid $main-color;
+        border-bottom: 2px solid $main-color;
+    }
+    @include breakpoint(lg) {
+        flex-direction: column;
+    }
+
+    &__list {
+        display: flex;
+        flex-grow: 1;
+
+        @include breakpoint(lg) {
+            padding: 20px 40px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint(sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__link {
+        flex-grow: 1;
+
+        &:hover {
+            color: #F880B9;
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.menu-social {
+    display: flex;
+    gap: 10px;
+
+
+    @include breakpoint(lg) {
+        padding: 20px;
+        width: 100%;
+        background: $main-gradient;
+        justify-content: space-between;
+
+        &_footer {
+            justify-content: left;
+            background: white;
+            padding: 0;
+        }
+    }
+
+    &__item {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: $social-gradient;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__image {
+    }
+}
