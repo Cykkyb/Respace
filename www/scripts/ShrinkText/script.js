@@ -2,44 +2,53 @@ export class ShrinkText {
     constructor(text, options = {}) {
         this.text = document.querySelectorAll(text);
         this.settings = {
-            default: options.default,
-            breakpoints: options.breakpoints
+            default: options.default ? options.default : 0 ,
+            breakpoints: options.breakpoints ? options.breakpoints : 0
         };
+        console.log(this.settings)
         this.breakpoints = [];
 
-        this.setDefault()
         this.setParameters();
     }
 
-    setDefault() {
+    setParameters() {
+        this.checkDefault();
+        this.checkBreakpoints();
+
+    }
+
+    checkDefault() {
+          console.log('checkDefault')
         if (this.settings.default) {
             this.lineHeight = this.settings.default.lineHeight ? this.settings.default.lineHeight : 0;
             this.lines = this.settings.default.lines ? this.settings.default.lines : 0;
             this.defaultShrink = this.lines * this.lineHeight;
-
-            if (this.defaultShrink) {
-                this.shrinkHeight = this.defaultShrink;
-            }
-        }
-        if (this.settings.breakpoints) {
-            this.breakpoints = Object.keys(this.settings.breakpoints).sort(function (a, b) {
-                return b - a;
-            }).map((item) => Number(item));
-        }else {
-            this.settings.breakpoints = 0
         }
     }
 
-    setParameters() {
+    checkBreakpoints() {
         let activeBreakpoints = 0;
 
-        this.breakpoints.forEach((item) => {
-            if (window.innerWidth <= item) {
-                activeBreakpoints = item;
-            }
-        });
-        this.setDefault();
+        if (this.settings.breakpoints) {
+              console.log(this.settings.breakpoints)
+            this.breakpoints = Object.keys(this.settings.breakpoints).sort(function (a, b) {
+                return b - a;
+            }).map((item) => Number(item));
+              console.log(this.breakpoints);
 
+            this.breakpoints.forEach((item) => {
+                if (window.innerWidth <= item) {
+                    activeBreakpoints = item;
+                }
+            });
+        }
+        this.setHeight(activeBreakpoints);
+    }
+
+    setHeight(activeBreakpoints) {
+        if (this.defaultShrink) {
+            this.shrinkHeight = this.defaultShrink;
+        }
         if (this.settings.breakpoints[activeBreakpoints]) {
             this.lineHeight = this.settings.breakpoints[activeBreakpoints].lineHeight;
             this.lines = this.settings.breakpoints[activeBreakpoints].lines;
@@ -75,22 +84,6 @@ export class ShrinkText {
         item.style.maxHeight = `${this.shrinkHeight}px`;
     }
 
-    // setEvent(){
-    //     window.addEventListener('resize', debounce( this.resize, 1000));
-    //     function debounce(callback, delay){
-    //         let timer;
-    //
-    //         return function (...args){
-    //             clearTimeout(timer);
-    //             timer = setTimeout(()=>{
-    //                 callback.apply(this, args);
-    //             }, delay);
-    //         }
-    //     }
-    // }
-    // resize(){
-    //     this.setParameters();
-    // }
     createButton(item) {
         let expandButton = document.createElement('div');
         expandButton.className = 'expand';
@@ -133,9 +126,24 @@ export class ShrinkText {
         }
     }
 
-
 }
 
 
+// setEvent(){
+//     window.addEventListener('resize', debounce( this.resize, 1000));
+//     function debounce(callback, delay){
+//         let timer;
+//
+//         return function (...args){
+//             clearTimeout(timer);
+//             timer = setTimeout(()=>{
+//                 callback.apply(this, args);
+//             }, delay);
+//         }
+//     }
+// }
+// resize(){
+//     this.setParameters();
+// }
 
 

@@ -75,12 +75,8 @@ main {
     font-size: 46px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
-    cursor: pointer;
     line-height: 60px;
 
-    &:hover {
-        color: $main-color;
-    }
 
     @include breakpoint(lg) {
         font-size: 40px;
