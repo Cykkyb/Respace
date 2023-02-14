@@ -5,7 +5,7 @@ export class ShrinkText {
             default: options.default ? options.default : 0 ,
             breakpoints: options.breakpoints ? options.breakpoints : 0
         };
-        console.log(this.settings)
+
         this.breakpoints = [];
 
         this.setParameters();
@@ -18,7 +18,6 @@ export class ShrinkText {
     }
 
     checkDefault() {
-          console.log('checkDefault')
         if (this.settings.default) {
             this.lineHeight = this.settings.default.lineHeight ? this.settings.default.lineHeight : 0;
             this.lines = this.settings.default.lines ? this.settings.default.lines : 0;
@@ -30,7 +29,6 @@ export class ShrinkText {
         let activeBreakpoints = 0;
 
         if (this.settings.breakpoints) {
-              console.log(this.settings.breakpoints)
             this.breakpoints = Object.keys(this.settings.breakpoints).sort(function (a, b) {
                 return b - a;
             }).map((item) => Number(item));
@@ -60,7 +58,6 @@ export class ShrinkText {
     }
 
     checkPram(activeBreakpoints) {
-
         this.text.forEach((item) => {
             if ((item.clientHeight > this.shrinkHeight && activeBreakpoints) || item.clientHeight > this.defaultShrink) {
                 this.addClass(item);
