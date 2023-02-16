@@ -85,6 +85,8 @@
         max-height: 50%;
         overflow: auto;
         line-height: 27px;
+        aspect-ratio: 476/216;
+
 
         &::-webkit-scrollbar {
             width: 2px;
