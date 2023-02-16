@@ -58,6 +58,10 @@
         color: white;
         font-weight: 300;
 
+        &:hover{
+            color: $pink;
+        }
+
         @include breakpoint(sm) {
             font-size: 12px;
             justify-content: center;

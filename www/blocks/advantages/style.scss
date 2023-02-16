@@ -46,6 +46,7 @@
         flex-direction: column;
         gap: 15px;
         transition: max-height 0.5s ease;
+        align-self: flex-start;
 
         @include breakpoint(sm) {
             max-height: 51px;
@@ -83,10 +84,16 @@
     &__arrow {
         height: fit-content;
         display: none;
-        padding: 12px 0 12px 20px;
+        transition: transform 0.3s ease;
+
+        &_active{
+            transform: rotate(180deg);
+        }
 
         @include breakpoint(sm) {
             display: block;
+
+
         }
     }
 
@@ -96,6 +103,10 @@
         line-height: 27px;
 
         @include breakpoint(lg) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+         @include breakpoint(ьв) {
             font-size: 12px;
             line-height: 22px;
         }

@@ -29,11 +29,11 @@
         }
 
         &:before {
-            transform: translateY(12px) rotate(135deg);
+            transform: translateY(8.5px) rotate(135deg);
         }
 
         &:after {
-            transform: translateY(-12px) rotate(-135deg);
+            transform: translateY(-8.5px) rotate(-135deg);
         }
     }
 }

@@ -32,7 +32,6 @@ export class ShrinkText {
             this.breakpoints = Object.keys(this.settings.breakpoints).sort(function (a, b) {
                 return b - a;
             }).map((item) => Number(item));
-              console.log(this.breakpoints);
 
             this.breakpoints.forEach((item) => {
                 if (window.innerWidth <= item) {

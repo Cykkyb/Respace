@@ -84,6 +84,11 @@
         min-width: 270px;
         width: 100%;
         align-self: flex-end;
+        transition: all 0.3s ease;
+
+        &:hover{
+            box-shadow: 3px 2px 15px grey  ;
+        }
 
         @include breakpoint(lg) {
             align-self: center;

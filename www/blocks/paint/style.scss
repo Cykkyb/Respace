@@ -86,6 +86,10 @@
         padding: 20px 20px;
         cursor: pointer;
 
+        &:hover{
+            color: $pink;
+        }
+
         @include breakpoint(sm) {
             border-radius: 0;
             border: none;

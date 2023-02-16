@@ -1,12 +1,15 @@
-const advantages = document.querySelector('.advantages');
+const advantagesLabels = document.querySelectorAll('.advantages__labels');
 
-advantages.addEventListener('click', (e) => {
-    const targetElement = e.target;
-    if (targetElement.closest('.advantages__arrow')) {
-        const advantagesItem = targetElement.parentElement.parentElement;
+advantagesLabels.forEach(item => (
+    item.addEventListener('click', (e) => {
+        if (window.innerWidth > 576) {
+            return
+        }
+        const advantagesItem = item.parentElement;
         const textHeight = advantagesItem.querySelector('.advantages__text').clientHeight;
+        const advantagesArrow = advantagesItem.querySelector('.advantages__arrow');
 
-        advantagesItem.style.maxHeight = (advantagesItem.classList.contains('_active')) ? `51px` : `${textHeight + 66}px`;
-        advantagesItem.classList.toggle('_active');
-    }
-});
+        advantagesArrow.classList.toggle('advantages__arrow_active');
+        advantagesItem.style.maxHeight = (advantagesItem.classList.contains('advantages__item_active')) ? `51px` : `${textHeight + 66}px`;
+        advantagesItem.classList.toggle('advantages__item_active');
+    })));
