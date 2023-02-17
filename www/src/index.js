@@ -1,3 +1,4 @@
+import 'swiper/swiper-bundle.css';
 import './main.scss';
 import '/index.html';
 
