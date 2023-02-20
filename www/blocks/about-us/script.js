@@ -5,6 +5,7 @@ import {
     Scrollbar,
     EffectCoverflow
 } from 'swiper';
+
 Swiper.use([Navigation, Pagination, Scrollbar, EffectCoverflow]);
 
 import {ShrinkText} from '/scripts/ShrinkText/script';

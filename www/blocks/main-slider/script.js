@@ -5,6 +5,7 @@ import {
     Scrollbar,
     EffectCoverflow
 } from 'swiper';
+
 Swiper.use([Navigation, Pagination, Scrollbar, EffectCoverflow]);
 
 new Swiper('.main-slider', {
