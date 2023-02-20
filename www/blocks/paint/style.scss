@@ -90,6 +90,10 @@
             &:hover {
                 color: $pink;
             }
+
+            &_active:hover{
+                color: black;
+            }
         }
         @include breakpoint(sm) {
             border-radius: 0;
