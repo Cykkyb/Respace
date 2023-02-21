@@ -161,6 +161,13 @@
         bottom: 30px;
         text-align: center;
         color: white;
+        cursor: pointer;
+
+        @media (any-hover: hover) {
+            &:hover{
+                 text-decoration: underline;
+            }
+        }
 
         @include breakpoint(sm) {
             bottom: calc(50% - 9px);
